@@ -32,11 +32,20 @@ export const metadata: Metadata = {
     siteName: "Portofolio Rebekah Tahendung",
     title: judul,
     description: deskripsi,
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Portofolio Rebekah Tahendung — Mahasiswa Teknik Informatika UNSRAT",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: judul,
     description: deskripsi,
+    images: ["/og.png"],
   },
   robots: { index: true, follow: true },
   category: "portfolio",
