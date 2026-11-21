@@ -5,13 +5,17 @@ export default function ProjectCard({ proyek }: { proyek: Proyek }) {
   const selesai = proyek.status === "selesai";
 
   return (
-    <article className="card group flex h-full flex-col overflow-hidden transition duration-300 hover:-translate-y-0.5 hover:shadow-lg">
+    <article className="card group flex h-full flex-col overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-lg">
       <div
-        className={`relative flex h-32 items-end bg-gradient-to-br ${proyek.gradien} p-5`}
+        className={`relative flex h-32 items-end overflow-hidden bg-gradient-to-br ${proyek.gradien} p-5`}
       >
         <span
           aria-hidden
-          className="text-3xl font-bold tracking-tight text-white/85"
+          className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+        />
+        <span
+          aria-hidden
+          className="relative text-3xl font-bold tracking-tight text-white/85 transition-transform duration-500 ease-out group-hover:scale-110"
         >
           {proyek.inisial}
         </span>
@@ -69,9 +73,9 @@ export default function ProjectCard({ proyek }: { proyek: Proyek }) {
               href={proyek.demo}
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center gap-1.5 font-medium text-accent hover:underline"
+              className="group/link inline-flex items-center gap-1.5 font-medium text-accent hover:underline"
             >
-              <IconExternal className="h-4 w-4" />
+              <IconExternal className="h-4 w-4 transition-transform duration-300 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
               Demo
             </a>
           ) : (

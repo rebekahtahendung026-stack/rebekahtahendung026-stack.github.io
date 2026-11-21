@@ -8,7 +8,8 @@ type Props = {
 export default function SectionHeading({ kicker, judul, deskripsi, id }: Props) {
   return (
     <div className="max-w-2xl">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+      <p className="flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+        <span aria-hidden className="h-px w-6 bg-accent" />
         {kicker}
       </p>
       <h2

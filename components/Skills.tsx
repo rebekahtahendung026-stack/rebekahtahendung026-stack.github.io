@@ -32,7 +32,7 @@ export default function Skills() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {profil.keahlian.map((grup, i) => (
             <Reveal key={grup.kelompok} delay={i * 60} className="h-full">
-              <div className="card h-full p-5">
+              <div className="card h-full p-5 transition duration-300 hover:-translate-y-0.5 hover:border-accent/30 hover:shadow-lg">
                 <h3 className="text-sm font-semibold text-ink dark:text-white">
                   {grup.kelompok}
                 </h3>

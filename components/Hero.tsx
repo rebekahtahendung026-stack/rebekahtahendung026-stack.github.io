@@ -1,6 +1,5 @@
 import { profil } from "@/data/profil";
 import Avatar from "./Avatar";
-import Reveal from "./Reveal";
 import {
   IconArrowRight,
   IconDownload,
@@ -21,13 +20,19 @@ export default function Hero() {
   return (
     <section id="beranda" aria-labelledby="judul-beranda" className="relative overflow-hidden">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-40 right-[-12%] h-[440px] w-[440px] rounded-full bg-accent/10 blur-3xl" />
-        <div className="absolute bottom-[-20%] left-[-15%] h-[340px] w-[340px] rounded-full bg-indigo-400/10 blur-3xl" />
+        <div className="absolute -top-40 right-[-12%] h-[440px] w-[440px] animate-float rounded-full bg-accent/10 blur-3xl" />
+        <div
+          className="absolute bottom-[-20%] left-[-15%] h-[340px] w-[340px] animate-float-slow rounded-full bg-indigo-400/10 blur-3xl"
+          style={{ animationDelay: "-8s" }}
+        />
       </div>
 
       <div className="container-page grid items-center gap-14 py-14 pb-20 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
-        <Reveal>
-          <p className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1.5 text-xs font-medium text-emerald-800 dark:border-emerald-900/60 dark:bg-emerald-950/40 dark:text-emerald-300">
+        <div>
+          <p
+            className="inline-flex animate-fade-up flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1.5 text-xs font-medium text-emerald-800 dark:border-emerald-900/60 dark:bg-emerald-950/40 dark:text-emerald-300"
+            style={{ animationDelay: "0ms" }}
+          >
             <span aria-hidden className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-70" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-600" />
@@ -39,21 +44,35 @@ export default function Hero() {
             <span className="font-normal">{profil.statusMagang.periode}</span>
           </p>
 
-          <h1
-            id="judul-beranda"
-            className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-[3.4rem] dark:text-white"
-          >
-            {profil.nama.split(" ")[0]}{" "}
-            <span className="text-accent">
-              {profil.nama.split(" ").slice(1).join(" ")}
-            </span>
-          </h1>
+          <div className="relative mt-6">
+            <h1
+              id="judul-beranda"
+              className="animate-fade-up text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-[3.4rem] dark:text-white"
+              style={{ animationDelay: "80ms" }}
+            >
+              {profil.nama.split(" ")[0]}{" "}
+              <span className="text-accent">
+                {profil.nama.split(" ").slice(1).join(" ")}
+              </span>
+            </h1>
+            <span
+              aria-hidden
+              className="mt-4 block h-1 w-28 origin-left animate-draw rounded-full bg-gradient-to-r from-accent to-indigo-400"
+              style={{ animationDelay: "600ms" }}
+            />
+          </div>
 
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
+          <p
+            className="mt-5 max-w-xl animate-fade-up text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300"
+            style={{ animationDelay: "160ms" }}
+          >
             {profil.posisi}
           </p>
 
-          <dl className="mt-8 grid max-w-md grid-cols-3 gap-4">
+          <dl
+            className="mt-8 grid max-w-md animate-fade-up grid-cols-3 gap-4"
+            style={{ animationDelay: "240ms" }}
+          >
             {[
               { label: "IPK", nilai: profil.ipk },
               { label: "Semester", nilai: profil.semester },
@@ -70,23 +89,29 @@ export default function Hero() {
             ))}
           </dl>
 
-          <div className="mt-9 flex flex-wrap items-center gap-3">
-            <a href="#proyek" className="btn-primary">
+          <div
+            className="mt-9 flex animate-fade-up flex-wrap items-center gap-3"
+            style={{ animationDelay: "320ms" }}
+          >
+            <a href="#proyek" className="btn-primary group">
               Lihat Proyek
-              <IconArrowRight className="h-4 w-4" />
+              <IconArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
-            <a href={profil.cv} download className="btn-ghost">
-              <IconDownload className="h-4 w-4" />
+            <a href={profil.cv} download className="btn-ghost group">
+              <IconDownload className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
               Unduh CV
             </a>
           </div>
 
-          <ul className="mt-8 flex items-center gap-2">
+          <ul
+            className="mt-8 flex animate-fade-up items-center gap-2"
+            style={{ animationDelay: "400ms" }}
+          >
             <li>
               <a
                 href={`mailto:${profil.email}`}
                 aria-label="Kirim email"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition hover:border-accent hover:text-accent dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-accent dark:hover:text-accent"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-accent dark:hover:text-accent"
               >
                 <IconMail className="h-[18px] w-[18px]" />
               </a>
@@ -100,7 +125,7 @@ export default function Hero() {
                     target="_blank"
                     rel="noreferrer noopener"
                     aria-label={s.label}
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition hover:border-accent hover:text-accent dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-accent dark:hover:text-accent"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-accent dark:hover:text-accent"
                   >
                     <Ikon className="h-[18px] w-[18px]" />
                   </a>
@@ -108,13 +133,18 @@ export default function Hero() {
               );
             })}
           </ul>
-        </Reveal>
+        </div>
 
-        <Reveal delay={120} className="mx-auto w-full max-w-[20rem] sm:max-w-sm">
-          <div className="relative">
-            <div className="card overflow-hidden rounded-[1.75rem] p-2">
+        <div
+          className="mx-auto w-full max-w-[20rem] animate-fade-up sm:max-w-sm"
+          style={{ animationDelay: "200ms" }}
+        >
+          <div className="group relative">
+            <div className="card overflow-hidden rounded-[1.75rem] p-2 transition-transform duration-500 ease-out group-hover:-translate-y-1">
               <div className="aspect-square overflow-hidden rounded-3xl">
-                <Avatar nama={profil.nama} inisial={profil.inisial} />
+                <div className="h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                  <Avatar nama={profil.nama} inisial={profil.inisial} />
+                </div>
               </div>
             </div>
             <div className="card absolute -bottom-6 left-4 right-4 flex items-center gap-3 rounded-2xl p-3.5 backdrop-blur">
@@ -131,7 +161,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

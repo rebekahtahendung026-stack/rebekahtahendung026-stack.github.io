@@ -39,9 +39,20 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translateY(16px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        float: {
+          "0%, 100%": { transform: "translate3d(0, 0, 0) scale(1)" },
+          "50%": { transform: "translate3d(0, -22px, 0) scale(1.04)" },
+        },
+        draw: {
+          "0%": { transform: "scaleX(0)" },
+          "100%": { transform: "scaleX(1)" },
+        },
       },
       animation: {
         "fade-up": "fade-up 600ms ease-out both",
+        float: "float 16s ease-in-out infinite",
+        "float-slow": "float 24s ease-in-out infinite",
+        draw: "draw 900ms cubic-bezier(0.22, 1, 0.36, 1) both",
       },
     },
   },

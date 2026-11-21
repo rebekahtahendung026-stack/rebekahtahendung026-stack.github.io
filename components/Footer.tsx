@@ -18,9 +18,9 @@ export default function Footer() {
 
         <a
           href="#beranda"
-          className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 px-3.5 py-2 text-xs font-medium text-slate-600 transition hover:border-accent hover:text-accent dark:border-slate-700 dark:text-slate-300"
+          className="group inline-flex items-center gap-1.5 rounded-full border border-slate-200 px-3.5 py-2 text-xs font-medium text-slate-600 transition hover:border-accent hover:text-accent dark:border-slate-700 dark:text-slate-300"
         >
-          <IconArrowUp className="h-3.5 w-3.5" />
+          <IconArrowUp className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5" />
           Kembali ke atas
         </a>
       </div>
